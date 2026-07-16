@@ -306,6 +306,39 @@ h3 { font-size: 1.3rem; }
   color: var(--ink-soft);
   font-size: 0.92rem;
 }
+/* ---------- Visitor counter (footer, built in js/site.js) ---------- */
+.visit-counter {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+}
+.visit-label {
+  font-size: 0.72rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  color: var(--ink-soft);
+}
+.odometer {
+  display: inline-flex;
+  gap: 2px;
+  padding: 4px;
+  border-radius: 5px;
+  background: var(--ink);
+  box-shadow: inset 0 1px 4px rgba(0, 0, 0, 0.7);
+}
+.odometer .digit {
+  font-family: "Courier New", Courier, monospace;
+  font-size: 0.9rem;
+  font-weight: 700;
+  line-height: 1;
+  padding: 3px 4px;
+  border-radius: 2px;
+  background: rgba(255, 255, 255, 0.05);
+  color: var(--lime);
+  text-shadow: 0 0 6px rgba(159, 193, 49, 0.75);
+}
+
 .footer-dots { display: inline-flex; gap: 8px; }
 .footer-dots span { width: 12px; height: 12px; border-radius: 50%; }
 .footer-dots .t { background: var(--terracotta); }

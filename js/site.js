@@ -26,10 +26,45 @@
       '<div class="nav-links">' + nav + "</div>" +
     "</nav></header>";
 
+  // Visit count lives in this browser only — no server, nothing sent
+  // anywhere. One count per browsing session, so clicking around the
+  // site doesn't inflate it. Storage throws in some private modes;
+  // then we just leave the counter out.
+  function visitCount() {
+    try {
+      var n = parseInt(localStorage.getItem("rk-visits"), 10);
+      if (!(n >= 0)) n = 0;
+      if (!sessionStorage.getItem("rk-visit-counted")) {
+        n += 1;
+        localStorage.setItem("rk-visits", String(n));
+        sessionStorage.setItem("rk-visit-counted", "1");
+      }
+      return n;
+    } catch (e) {
+      return 0;
+    }
+  }
+
+  var visits = visitCount();
+  var counter = "";
+  if (visits > 0) {
+    var padded = String(Math.min(visits, 999999));
+    while (padded.length < 6) padded = "0" + padded;
+    var digits = padded.split("").map(function (d) {
+      return '<span class="digit">' + d + "</span>";
+    }).join("");
+    counter =
+      '<span class="visit-counter" title="Counted in your browser only.">' +
+        '<span class="visit-label">Your visit</span>' +
+        '<span class="odometer">' + digits + "</span>" +
+      "</span>";
+  }
+
   var year = new Date().getFullYear();
   var footer =
     '<footer class="site-footer"><div class="wrap">' +
       "<span>© " + year + " Rachel Kaur · Made in Upstate New York</span>" +
+      counter +
       '<span class="footer-dots"><span class="t"></span>' +
         '<span class="l"></span><span class="f"></span></span>' +
     "</div></footer>";
