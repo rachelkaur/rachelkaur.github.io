@@ -7,6 +7,12 @@
    ======================================================= */
 window.POSTS = [
   {
+    title: "Notes from an unserious gardener",
+    date: "2026-07-15",         // YYYY-MM-DD
+    file: "posts/unserious-gardener.html",
+    excerpt: "My first summer actually trying to grow vegetables, following some impulse plant purchases at a local grocery store."
+  },
+  {
     title: "Welcome to my corner of the internet",
     date: "2026-07-12",        // YYYY-MM-DD
     file: "posts/hello-world.html",
