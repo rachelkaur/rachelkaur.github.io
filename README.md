@@ -14,7 +14,7 @@ blog.html         Blog index (auto-generated from js/posts.js)
 projects.html     "Coming soon"
 404.html          Not-found page
 css/style.css     All styling + the color palette
-js/site.js        The shared banner + footer (edit nav in ONE place)
+js/site.js        The shared banner + footer + visit counter (edit nav in ONE place)
 js/posts.js       The list of blog posts  <-- add posts here
 js/blog.js        Renders the blog index
 posts/            One HTML file per blog post
@@ -45,6 +45,17 @@ CNAME             Custom domain (www.rachelkaur.com)
 
 All colors live at the top of `css/style.css` under `:root`
 (terracotta, lime green, fuchsia). Change them there once.
+
+## 🔢 The visit counter
+
+The little odometer in the footer counts visits **in each visitor's own
+browser** (localStorage) — one count per browsing session, so clicking
+around the site doesn't run it up. There's no server and no third-party
+service involved, which means nothing is sent anywhere and nothing can
+break from the outside. The flip side: it's not a site-wide total, so a
+first-time visitor always sees `000001`. It's a personal hello, not a
+stat. The digits and the counting live in `js/site.js`; the odometer
+styling is under "Visitor counter" in `css/style.css`.
 
 ## Nav / footer
 
