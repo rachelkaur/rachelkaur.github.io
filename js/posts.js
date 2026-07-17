@@ -7,6 +7,12 @@
    ======================================================= */
 window.POSTS = [
   {
+    title: "On a whim, I signed up for a half marathon",
+    date: "2026-07-16",         // YYYY-MM-DD
+    file: "posts/on-a-whim-i-started-running.html",
+    excerpt: "One chilly March email turned me into a first-time runner — sixteen-minute miles, near-collapsing lungs, and all."
+  },
+  {
     title: "Notes from an unserious gardener",
     date: "2026-07-15",         // YYYY-MM-DD
     file: "posts/unserious-gardener.html",
