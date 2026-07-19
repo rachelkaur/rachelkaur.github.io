@@ -82,4 +82,17 @@
     main.id = "main-content";
     main.setAttribute("tabindex", "-1");
   }
+
+  // Move focus into main explicitly on activation. Fragment navigation
+  // alone doesn't reliably move keyboard focus across browsers, so the
+  // skip link would scroll but leave focus in the header without this.
+  var skip = document.querySelector(".skip-link");
+  if (skip && main) {
+    skip.addEventListener("click", function (e) {
+      e.preventDefault();
+      main.focus();
+      main.scrollIntoView();
+      history.replaceState(null, "", "#main-content");
+    });
+  }
 })();
