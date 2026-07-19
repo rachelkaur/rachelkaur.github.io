@@ -19,6 +19,7 @@
   }).join("");
 
   var header =
+    '<a class="skip-link" href="#main-content">Skip to main content</a>' +
     '<header class="site-header"><nav class="nav">' +
       '<a class="brand" href="' + base + 'index.html">' +
         '<span class="dot"></span>Rachel Kaur' +
@@ -73,4 +74,12 @@
   var f = document.getElementById("site-footer");
   if (h) h.outerHTML = header;
   if (f) f.outerHTML = footer;
+
+  // Give the skip link a target. tabindex -1 lets it receive focus
+  // without becoming a tab stop itself.
+  var main = document.querySelector("main");
+  if (main && !main.id) {
+    main.id = "main-content";
+    main.setAttribute("tabindex", "-1");
+  }
 })();

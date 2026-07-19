@@ -5,7 +5,7 @@
    ========================================================= */
 
 :root {
-  --terracotta: #c4633f;
+  --terracotta: #ad5230; /* WCAG AA: 5.2:1 on white, 4.9:1 on cream (was #c4633f, 4.04:1) */
   --terracotta-soft: #e9b9a6;
   --lime: #9fc131;
   --lime-soft: #dfeeb0;
@@ -27,6 +27,29 @@
 * { box-sizing: border-box; }
 
 html { scroll-behavior: smooth; }
+
+/* ---------- Accessibility: skip link + focus ---------- */
+.skip-link {
+  position: absolute;
+  left: 8px;
+  top: -60px;
+  z-index: 100;
+  background: var(--ink);
+  color: #fff;
+  padding: 10px 18px;
+  border-radius: 999px;
+  font-weight: 800;
+  transition: top 0.15s ease;
+}
+.skip-link:focus {
+  top: 8px;
+  text-decoration: none;
+}
+:focus-visible {
+  outline: 3px solid var(--fuchsia);
+  outline-offset: 2px;
+  border-radius: 4px;
+}
 
 body {
   margin: 0;
